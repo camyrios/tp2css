@@ -1,0 +1,826 @@
+/* Tipografía general */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/** ESTILOS SOBRE ETIQUETAS **/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Asigno la fuente elegida a toda la página */
+html,
+body {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  color: #f6f6f6;
+  background: linear-gradient(to bottom, #1f2326, #13151b);
+  overflow-x: hidden; /*Con esto se evita el scroll horizontal*/
+  text-align: center;
+}
+
+/* Saco el estilo a los enlaces (anchor) para estilizar correctamente en su respectiva clase/id */
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+a:focus {
+  outline:none;
+}
+
+h2 {
+  margin: 0;
+  font-size: 48px;
+  text-transform: uppercase
+}
+
+/* Saco el padding y la viñeta a la lista para estilizar los items correctamente en su respectiva clase/id */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #787b81;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+nav ul li a:hover {
+  color: #ff4656;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.redes-sociales ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.redes-sociales ul li a {
+  font-size: 40px;
+  color: #f6f6f6;
+}
+
+.redes-sociales ul li a:hover {
+  font-size: 40px;
+  color: #d13d4b;
+}
+
+.datos-contacto li {
+  margin: 32px 0;
+  display: block;
+}
+
+.datos-contacto a:hover {
+  font-weight: bold;
+}
+
+.datos-contacto ul li a:hover {
+  font-size: 40px;
+  color: #d13d4b;
+}
+
+#nav-inferior ul li a {
+  color: #f6f6f6;
+}
+
+#nav-inferior ul li a:hover {
+  color: #d13d4b;
+}
+
+.iconos-redes li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.iconos-redes li a {
+  font-size: 25px;
+  color: #f6f6f6;
+}
+
+.iconos-redes li a:hover {
+  font-size: 25px;
+  color: #d13d4b;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+input,
+textarea {
+  display: block;
+}
+
+label {
+  font-size: 18px;
+  margin: 0;
+}
+
+footer {
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* ------------------------- */
+
+/** ESTILOS SOBRE ID **/
+
+/* El contenedor-general setea el gradiente del fondo */
+#contenedor-general {
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+#img-bg {
+  position: absolute; /* Posiciona fuera del flujo normal */
+  width: 1900px; /* Ajusta el tamaño */
+  height: 1900px;
+  background: url("multimedia/background-image-circles.png") no-repeat;
+  background-size: cover;
+  top: 60%; /* Ajusta la posición vertical */
+  right: -600px; /* Hace que la imagen sobresalga del contenedor */
+  transform: translateY(
+    -50%
+  ); /* Centra verticalmente en relación al contenedor */
+  z-index: 0; /* Asegurar que esté debajo del contenido del contenedor-general */
+}
+
+/* Agregar la segunda imagen de fondo utilizando un pseudo-elemento */
+#contenedor-general::before {
+  content: ""; /* Obligatorio para pseudo-elementos */
+  position: absolute;
+  width: 1600px;
+  height: 800px;
+  background: url("multimedia/circulitosfondo.png") no-repeat;
+  background-size: cover;
+  top: 25%; 
+  left: -42px; 
+  transform: translateY(-50%);
+  z-index: -1; 
+}
+
+/* HEADER */
+
+#contenedor-header {
+  margin: 80px auto;
+}
+
+/* Agregar la imagen al h1 de manera correcta */
+#logo,
+#logo-2,
+#logo-3 {
+  width: 70px;
+  height: 41px;
+  background-image: url("multimedia/crlogo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 0;
+  display: inline-block;
+}
+
+/* PORTFOLIO */
+
+#contenedor-portfolio {
+  margin: 200px auto;
+  font-size: 0;
+}
+
+/* CONTACTO */
+
+#contenedor-formcontacto {
+  background: #d13d4b;
+}
+
+#contenedor-contacto {
+  padding: 120px 0;
+  font-size: 0;
+  text-align: left;
+}
+
+/* NAV INFERIOR */
+
+#nav-inferior {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #f6f6f6;
+  margin-bottom: 64px;
+}
+
+#contenedor-social {
+  margin-bottom: 64px;
+}
+
+#intro {
+  font-size: 0;
+  padding: 0 20px;
+  margin: 120px auto;
+}
+
+/* ------------------------- */
+
+/** ESTILOS SOBRE CLASES **/
+
+.tamanio-contenedor {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.banner {
+  text-align: left;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+.navegacion-principal {
+  text-align: center;
+  display: inline-block;
+  margin: 0 40px;
+}
+
+.activo {
+  color: #f6f6f6;
+  font-weight: bold;
+}
+
+.contenido-centralizado {
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.contenido-centralizado h2 {
+  font-size: 160px;
+}
+
+.redes-sociales {
+  margin-top: 100px;
+  height: auto;
+  font-size: 0; /* Elimina espacios en blanco que se generan al usar inline-block */
+}
+
+.encabezado-contacto {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.info-contacto {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  font-size: 16px;
+  margin-right: 50px;
+}
+
+.texto-contacto {
+  margin-bottom: 64px;
+}
+
+.form-simulado {
+  display: inline-block;
+  width: 45%;
+  font-size: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* Evita que el texto se divida */
+  border: 0;
+}
+
+.estilo-input {
+  width: 100%;
+  min-height: 50px;
+  margin: 24px 0;
+  padding: 14px 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.estilo-input::before {
+  content: attr(data-placeholder);
+  color: #aaa;
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  pointer-events: none;
+}
+
+.boton-mail {
+  background-color: #13151b;
+  padding: 12px 56px;
+  border-radius: 10px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.boton-mail:hover {
+  color: #13151b;
+  background: #f6f6f6;
+  font-weight: bold;
+}
+
+
+.titulo-redes {
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+
+.copyright-izquierda {
+  display: inline-block;
+  width: 45%;
+  color: #787b81;
+}
+
+.highlight {
+  color: #f6f6f6;
+}
+
+.creditos-derecha {
+  display: inline-block;
+  width: 45%;
+}
+
+.separacion {
+  margin: 0 10px;
+  text-align: right;
+}
+
+/** SOBRE MI **/
+
+/* PRESENTACION */
+.foto {
+  height: 650px;
+  width: 650px;
+  border-radius: 100%;
+  border: 25px solid #15131b;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 110px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.foto img {
+  width: 120%;
+  height: auto;
+  object-fit: cover;
+  object-position: -50px -130px;
+}
+
+.texto {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 150px 0;
+  text-align: left;
+}
+
+.cita {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.highlight-2 {
+  color: #ff4656;
+}
+
+.info {
+  margin: 40px 0;
+}
+
+.info p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #f6f6f690;
+}
+
+.button-1 {
+  background-color: #ff4656;
+  color: #f6f6f6;
+  padding: 15px 25px;
+  font-weight: 700;
+  border-radius: 100px;
+  display: inline-block;
+  margin: 30px 0;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animación suave */
+}
+
+.button-1:hover {
+  background-color: #d13d4b; /* Cambia el color de fondo al pasar el mouse */
+  transform: scale(1.05); /* Efecto de agrandamiento suave */
+  color: #fff; /* Asegura que el texto siga siendo visible */
+}
+
+/* SOBRE MI */
+
+#sobre-mi {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.texto-gris {
+  color: #f6f6f690;
+}
+
+.subtitulo h3 {
+  font-size: 40px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.decoracion-h3 {
+  border: 2px solid #ff4656;
+  border-radius: 10px;
+  width: 65px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* HOBBIES */
+
+.hobbies-container {
+  font-size: 0;
+}
+
+.hobbie {
+  display: inline-block;
+  margin: 50px 30px;
+}
+
+.hobbie img {
+  margin-bottom: 40px;
+}
+
+.hobbie figcaption {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* IDIOMAS */
+
+.idiomas-container {
+  background-color: #d13d4b;
+  width: 1150px;
+  margin: 50px auto;
+  margin-bottom: 100px;
+  padding: 60px;
+  border-radius: 18px;
+}
+
+.idioma {
+  font-size: 24px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 50px;
+}
+
+.porcentaje {
+  font-size: 57px;
+  font-weight: 700;
+}
+
+/* PASIONES */
+
+.pasiones-container {
+  font-size: 0;
+}
+
+.pasion,
+.tatuajes-descripcion, .servicio {
+  /* el contenedor de ambos div comparten estilos*/
+  text-align: left;
+  width: 440px;
+}
+
+.pasion h4,
+.tatuajes-descripcion h4, .servicio h4 {
+  /* los h4 de ambos div comparten estilos*/
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.columna-1 {
+  display: inline-block;
+  margin-right: 50px;
+  vertical-align: top;
+}
+
+#skate {
+  margin-top: 60px; /* Para que quede a la misma altura que #poesia */
+}
+
+.columna-2 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pasiones-container .columna-1 {
+  margin-right: 150px;
+}
+
+
+/* TATUAJES */
+
+.tatuajes-descripcion {
+  margin-left: 135px;
+}
+
+.galeria-tatuajes {
+  font-size: 0;
+  margin: 50px;
+}
+.enlace-imagen {
+  height: 440px;
+  width: 480px;
+  background-color: #2B3034;
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.enlace-imagen a:hover {
+  color: #ff4656;
+}
+
+.contenedor-imagen {
+  height: 340px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contenedor-imagen img {
+  width: 480px;
+  height: 340px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.enlace-imagen a {
+  height: auto;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 30px;
+  display: block;
+  position: relative;
+}
+
+.enlace-imagen figcaption a span {
+  float: left; /* Asegura que el texto quede a la izquierda */
+  margin: 0;
+  padding: 0;
+}
+
+.enlace-imagen a figcaption {
+  display: inline-block;
+  float: left;
+}
+
+.enlace-imagen a i {
+  display: inline-block;
+  float: right;
+}
+
+/** PROYECTOS **/
+
+main {
+  text-align: center;
+  margin: auto;
+}
+
+#intro-proyectos {
+  margin: 100px 0;
+}
+
+#intro-proyectos h2 {
+  margin-bottom: 30px;
+}
+
+#intro-proyectos p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* EJEMPLOS */
+
+#proyectos {
+  font-size: 0;
+  margin: 50px;
+}
+.enlace-proyecto {
+  height: 300px;
+  width: 500px;
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.contenedor-proyecto {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contenedor-proyecto img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+#revista img, #fotomontaje img, #ilustracion img{
+  object-position: center -210px;
+}
+
+#publicidad img {
+  object-position: center -50px;
+}
+
+#poster-tipografico img {
+  object-position: center -255px;
+}
+
+
+.enlace-icono a i:hover {
+  
+  color: #ff4656;
+  background-color: #f6f6f6;
+}
+
+.descripcion-proyecto {
+  display: inline-block;
+  float: left;
+  padding: 25px 10px;
+}
+
+.descripcion-proyecto span {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.descripcion-proyecto p {
+  font-size: 14px;
+}
+
+.enlace-icono a i {
+  position: absolute;
+  font-size: 20px;
+  float: right;
+  background-color: #d13d4b;
+  padding: 10px;
+  border-radius: 100%;
+  margin: -120px 200px;
+}
+
+/* SERVICIOS */
+
+#servicios {
+  font-size: 0;
+  margin: 100px auto;
+}
+
+#research-prototipo {
+  margin-top: 63px;
+}
+
+#servicios .columna-1 {
+  margin-right: 150px;
+}
+
+/*  SKILLS */
+
+#skills {
+  margin-bottom: 100px;
+}
+
+.skills-container {
+  font-size: 0;
+}
+
+.skill {
+  display: inline-block;
+  margin: 50px 30px;
+}
+
+.skill img {
+  margin-bottom: 40px;
+}
+
+.skill figcaption {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* TESTIMONIO */
+
+#testimonios{
+  margin-bottom: 100px;
+}
+
+#testimonios aside {
+  width: 780px;
+  margin: auto;
+  padding: 0;
+}
+
+#testimonios blockquote {
+  font-size: 16px;
+  font-weight:400;
+}
+
+#testimonios h2{
+  margin-bottom: 30px;
+}
+
+
+.foto-cliente {
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.foto-cliente img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.datos-cliente {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: top;
+  padding: 10px 0;
+}
+
+.datos-cliente span {
+  font-weight: 700;
+}
+
+strong {
+  font-weight: normal;
+}
+
+em {
+  font-style: normal;
+}
+
+/* Estilo del botón de subir */
+.boton-subir {
+  position: fixed; /* Fijo en la pantalla */
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la derecha */
+  background-color: #787b81; /* Color del botón */
+  color: white; /* Color del texto */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 50px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 18px; /* Tamaño del texto */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+  z-index: 100; /* Asegura que esté por encima del contenido */
+}
+
+/* Efecto hover para el botón */
+.boton-subir:hover {
+  background-color: #1f2326; /* Cambia el color al pasar el mouse */
+}
+
